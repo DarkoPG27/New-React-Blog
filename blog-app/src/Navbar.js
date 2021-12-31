@@ -1,7 +1,7 @@
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <div className="link">
+            <div className="links">
                 <a href="/"><img className="logo" src="/logo.png"></img></a>
                 <a href="/add-post"> <button className="add-post">Dodaj post</button></a>
             </div>

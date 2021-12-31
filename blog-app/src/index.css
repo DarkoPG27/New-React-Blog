@@ -1,0 +1,52 @@
+ *{
+    margin:0;
+    font-family: "Quicksand"; 
+    color: #333;
+  }
+  
+  .navbar{
+    padding-top: 20px;
+    max-width: 600px;
+    margin:0 auto;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+   .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .navbar button{
+    margin-left: 260px;
+    background: #1b1e20b7;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar button:hover {
+    background-color:#a7b179;
+  }
+
+  .navbar .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .navbar a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center; 
+    max-width: 800px;
+    margin: 10px auto;
+  } 
