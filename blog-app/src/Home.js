@@ -8,9 +8,14 @@ const Home = () => {
         { title: "Moj treci sajt", body: "dasdasdasdasdas", image: "https://materializecss.com/images/sample-1.jpg", author: "I", id: 3 }
     ])
 
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs)
+    }
+
     return (
         <div className="home">
-            <BlogList blogs={blogs} />
+            <BlogList blogs={blogs} handleDelete={handleDelete} />
         </div >
     );
 }
