@@ -51,6 +51,17 @@
     margin: 10px auto;
   } 
 
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  
+   .blog-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap:20px;
+  }
+
   /* blog prewiews / list */
 .blog-preview {
     padding: 10px 16px;
