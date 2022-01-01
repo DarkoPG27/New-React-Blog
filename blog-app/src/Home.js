@@ -4,11 +4,6 @@ import BlogList from "./BlogList";
 const Home = () => {
     const [blogs, setBlogs] = useState("");
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs)
-    }
-
     useEffect(() => {
         fetch('https://jsonblob.com/api/jsonBlob/926305735986659328')
             .then(response => {
@@ -24,7 +19,7 @@ const Home = () => {
     }, []);
     return (
         <div className="home">
-            {blogs && <BlogList blogs={blogs} handleDelete={handleDelete} />}
+            {blogs && <BlogList blogs={blogs} />}
         </div >
     );
 }

@@ -1,4 +1,4 @@
-const BlogList = ({ blogs, handleDelete }) => {
+const BlogList = ({ blogs }) => {
 
     return (
         <div>
@@ -9,7 +9,7 @@ const BlogList = ({ blogs, handleDelete }) => {
                         <img src={blog.image} alt={blog.image} />
                         <h2>{blog.title}</h2>
                         <p>Autor: {blog.author}</p>
-                        <button onClick={() => handleDelete(blog.id)}>delete blog</button>
+
                     </div>
                 ))}
             </div>
