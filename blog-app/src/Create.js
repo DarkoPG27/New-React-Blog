@@ -5,12 +5,18 @@ const Create = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
-    const [url, setUrl] = useState("");
+    const [image, setImage] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const blog = { title, body, image, author };
+
+    }
 
     return (
         <div className="create">
             <h2>Dodaj Novi Post</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Naslov:</label>
                 <input
                     type="text"
@@ -29,8 +35,8 @@ const Create = () => {
                 <input
                     type="link"
                     required
-                    value={url}
-                    onChange={(e) => setUrl(e.target.value)}
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
                 />
                 <label>Ime autora:</label>
                 <input
