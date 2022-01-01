@@ -1,16 +1,23 @@
 import { useState } from "react";
-
 const Create = () => {
 
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { title, body, image, author };
 
+        const blog = { title, body, image, author };
+        fetch('https://jsonblob.com/api/jsonBlob/926966337956495360/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(blog)
+        }).then(() => {
+            console.log(body)
+        })
+
+        console.log(blog)
     }
 
     return (
@@ -44,7 +51,7 @@ const Create = () => {
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
-                <button>Dodaj post</button>
+                <button >Dodaj post</button>
             </form>
         </div>
     );

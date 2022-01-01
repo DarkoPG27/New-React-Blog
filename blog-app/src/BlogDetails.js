@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 const BlogDetails = () => {
 
     const { id } = useParams();
-    const { data: blog, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926305735986659328/')
+    const { data: blog, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/')
     console.log(id - 1)
     return (
         <div className="blog-details">
