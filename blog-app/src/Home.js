@@ -1,28 +1,11 @@
-import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
+
 
 const Home = () => {
-    const [blogs, setBlogs] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null)
-    useEffect(() => {
-        fetch('https://jsonblob.com/api/jsonBlob/926305735986659328')
-            .then(response => {
-                if (!response.ok) {
-                    throw Error("could not fetch the data")
-                }
-                return response.json();
-            })
-            .then(response => {
-                setBlogs(response.blogs);
-                setIsLoading(false);
-                setError(null);
-            })
-            .catch(error => {
-                setIsLoading(false);
-                setError(error.message);
-            });
-    }, []);
+
+    const { data: blogs, isLoading, error } = useFetch('https://jsonblob.com/api/jsonBlob/926305735986659328');
+
     return (
         <div className="home">
             {error && <div>{error}</div>}
