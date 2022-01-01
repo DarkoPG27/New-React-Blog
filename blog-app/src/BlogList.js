@@ -9,7 +9,6 @@ const BlogList = ({ blogs }) => {
                         <img src={blog.image} alt={blog.image} />
                         <h2>{blog.title}</h2>
                         <p>Autor: {blog.author}</p>
-
                     </div>
                 ))}
             </div>
