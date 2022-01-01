@@ -73,21 +73,41 @@
     width: 200px;
     height:250px;
   }
-  
-  .blog-details img {
-    width: fit-content;
-  }
-  
+
   .blog-preview:hover{
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
   }
   
   .blog-preview h2{
     font-size: 20px;
-    color:#df1d1db7;
+    color:##1b1e20b7;
     margin-bottom: 8px;
   }
   
   .blog-preview a{
     text-decoration: none;
   }
+  
+  .blog-details img {
+    height: 450px;
+  }
+
+  .blog-details h2{
+    font-size: 20px;
+    color:#1b1e20b7;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .blog-details p{
+    display: flex;
+    justify-content: end;
+  }
+
+  .blog-details div{
+    margin: 20px 0;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+  } 
