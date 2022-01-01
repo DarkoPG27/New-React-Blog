@@ -1,4 +1,5 @@
 const BlogList = ({ blogs, handleDelete }) => {
+
     return (
         <div>
             <div className="header"><h1>SVI POSTOVI</h1></div>
