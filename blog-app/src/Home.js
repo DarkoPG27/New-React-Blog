@@ -1,7 +1,6 @@
 import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
-
 const Home = () => {
 
     const { data: blogs, isLoading, error } = useFetch('https://jsonblob.com/api/jsonBlob/926305735986659328');
