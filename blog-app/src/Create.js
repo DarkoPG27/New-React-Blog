@@ -41,12 +41,14 @@ const Create = () => {
                 <input
                     type="text"
                     required
+                    maxLength={20}
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <label>Sadržaj:</label>
                 <textarea
                     required
+                    maxLength={250}
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                 >
@@ -61,6 +63,7 @@ const Create = () => {
                 <label>Ime autora:</label>
                 <input
                     type="text"
+                    maxLength={20}
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
