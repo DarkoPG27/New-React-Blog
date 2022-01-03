@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useFetch from "./useFetch";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
 
@@ -9,6 +10,7 @@ const Create = () => {
     const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +26,10 @@ const Create = () => {
 
         }).then((response) => response.json(),
             setIsLoading(false))
+            .then(() => {
+                console.log(data);
+                history.push('/');
+            })
             .catch((error) => console.log(error))
     }
 
