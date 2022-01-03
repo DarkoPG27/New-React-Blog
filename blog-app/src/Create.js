@@ -1,24 +1,17 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
-
 const Create = () => {
-
 
     const { data: blogs } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/');
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
-    const [id, setId] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const blog = { title, body, image, author, id: blogs.length + 1 };
         let data = [...blogs, blog];
         setIsLoading(true)
@@ -31,11 +24,7 @@ const Create = () => {
 
         }).then((response) => response.json(),
             setIsLoading(false))
-            .then((data) => console.log(data)
-
-            )
             .catch((error) => console.log(error))
-
     }
 
     return (
