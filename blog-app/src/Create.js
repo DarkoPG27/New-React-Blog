@@ -18,9 +18,8 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setId(blogs.length);
-        console.log(id);
-        const blog = { title, body, image, author, id };
+
+        const blog = { title, body, image, author, id: blogs.length + 1 };
         let data = [...blogs, blog];
         setIsLoading(true)
         fetch('https://jsonblob.com/api/jsonBlob/926966337956495360', {
