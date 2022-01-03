@@ -1,23 +1,36 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import useFetch from "./useFetch";
+
+
 const Create = () => {
+
+    const { id } = useParams();
+    const { data: blogs, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/' + id)
 
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const blog = { title, body, image, author };
-        fetch('https://jsonblob.com/api/jsonBlob/926966337956495360/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(blog)
-        }).then(() => {
-            console.log(body)
-        })
+        let data = [...blogs, blog];
+        fetch('https://jsonblob.com/api/jsonBlob/926966337956495360', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
 
-        console.log(blog)
+        }).then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.log(error))
+
     }
 
     return (

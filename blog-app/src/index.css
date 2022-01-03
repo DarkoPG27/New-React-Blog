@@ -100,10 +100,6 @@
     justify-content: center;
   }
 
-  .blog-details p{
-    display: flex;
-    justify-content: end;
-  }
 
   .blog-details div{
     margin: 20px 0;

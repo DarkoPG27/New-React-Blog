@@ -4,8 +4,8 @@ import useFetch from "./useFetch";
 const BlogDetails = () => {
 
     const { id } = useParams();
-    const { data: blog, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/')
-    console.log(id - 1)
+    const { data: blog, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/' + id)
+    console.log(id)
     return (
         <div className="blog-details">
             {isLoading && <div>Loading...</div>}
