@@ -5,21 +5,24 @@ import useFetch from "./useFetch";
 
 const Create = () => {
 
-    const { id } = useParams();
-    const { data: blogs, error, isLoading } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/' + id)
 
+    const { data: blogs } = useFetch('https://jsonblob.com/api/jsonBlob/926966337956495360/');
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
+    const [id, setId] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const blog = { title, body, image, author };
+        setId(blogs.length);
+        console.log(id);
+        const blog = { title, body, image, author, id };
         let data = [...blogs, blog];
+        setIsLoading(true)
         fetch('https://jsonblob.com/api/jsonBlob/926966337956495360', {
             method: 'PUT',
             headers: {
@@ -27,8 +30,11 @@ const Create = () => {
             },
             body: JSON.stringify(data)
 
-        }).then((response) => response.json())
-            .then((data) => console.log(data))
+        }).then((response) => response.json(),
+            setIsLoading(false))
+            .then((data) => console.log(data)
+
+            )
             .catch((error) => console.log(error))
 
     }
@@ -64,7 +70,8 @@ const Create = () => {
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
-                <button >Dodaj post</button>
+                {!isLoading && <button >Dodaj post</button>}
+                {isLoading && <button disabled>Dodavanje posta...</button>}
             </form>
         </div>
     );
