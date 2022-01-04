@@ -14,8 +14,8 @@ const BlogDetails = () => {
                 <article>
                     <h2>{blog[id - 1].title}</h2>
                     <img src={blog[id - 1].image} alt={blog[id - 1].title} />
+                    <div className="body">{blog[id - 1].body}</div>
                     <p>Autor: {blog[id - 1].author}</p>
-                    <div>{blog[id - 1].body}</div>
                 </article>
             )}
         </div>
